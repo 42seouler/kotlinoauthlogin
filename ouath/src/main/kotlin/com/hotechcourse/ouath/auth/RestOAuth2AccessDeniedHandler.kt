@@ -5,7 +5,7 @@ import org.springframework.security.web.access.AccessDeniedHandler
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-class JwtAccessDeniedHandler : AccessDeniedHandler {
+class RestOAuth2AccessDeniedHandler : AccessDeniedHandler {
 
     override fun handle(
         request: HttpServletRequest,

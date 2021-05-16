@@ -10,11 +10,11 @@ import org.springframework.security.crypto.password.PasswordEncoder
 @Configuration
 class MemberConfiguration {
     @Bean
-    fun initMember(memberRepository: MemberRepository, passwordEncoder: PasswordEncoder) = ApplicationRunner {
+    fun initMembers(memberRepository: MemberRepository) = ApplicationRunner {
         memberRepository.saveAll(listOf(
-            Member("nakim", passwordEncoder.encode("123456"), "nakim", listOf("ROLE_ADMIN", "ROLE_USER")),
-            Member("jack", passwordEncoder.encode("123456"), "Jack", listOf("ROLE_USER")),
-            Member("peter", "123456", "Peter", listOf("ROLE_USER"))
+            Member("42seouler@gmail.com", "google", "Monika", listOf("ROLE_ADMIN", "ROLE_USER")),
+            Member("jack@gmail.com", "google", "Jack", listOf("ROLE_USER")),
+            Member("peter@gmail.com", "google", "Peter", listOf("ROLE_USER"))
         ))
     }
 }

@@ -16,6 +16,6 @@ class MemberUserDetailsService(private val memberRepository: MemberRepository) :
             ?: throw UsernameNotFoundException("$username was not found")
 
         val authority = member.authorities.map { SimpleGrantedAuthority(it) }
-        return User(member.username, member.password, authority)
+        return User(member.username, "", authority)
     }
 }
