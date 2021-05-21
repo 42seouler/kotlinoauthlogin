@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 373554653660-pic6ta198hlr2hf2s64to88s5k861hs4.apps.googleusercontent.com
+            client-secret: k0A_E087hVmE62VI_e-2LUfT
+          ftseoul:
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'
+            scope: public
+            client-name: ftseoul
+            client-authentication-method: POST
+            client-id: acc498ef3a4f8c025b0b0d1a8fb30a5e284bc52ac245b1b71916854b2e9e74f2
+            client-secret: aff83649d6db7b4edf04880c02954a09f298d4122a979b19f755e165a77c581e
+        provider:
+          ftseoul:
+            authorization-uri: https://api.intra.42.fr/oauth/authorize
+            token-uri: https://api.intra.42.fr/oauth/token
+            user-info-uri: https://api.intra.42.fr/v2/me
+            user-name-attribute: code

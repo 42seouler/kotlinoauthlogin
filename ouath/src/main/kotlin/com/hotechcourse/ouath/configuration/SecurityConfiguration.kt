@@ -34,14 +34,18 @@ class SecurityConfig(
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
             .and()
+//            .oauth2Login()
+//            .loginPage("/login.html")
+//            .and()
             .exceptionHandling()
-            .authenticationEntryPoint(RestOAuth2AuthenticationEntryPoint())
+//            .authenticationEntryPoint(RestOAuth2AuthenticationEntryPoint())
             .accessDeniedHandler(RestOAuth2AccessDeniedHandler())
 
             .and()
             .authorizeRequests()
             .antMatchers("/login.html").permitAll()
-            .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+            .antMatchers("/v3/api-docs/**", "/antMatchersswagger-ui/**", "/swagger-ui.html").permitAll()
+//            .antMatchers("/v3/api-docs/**", "/swagger-ui/**swagger-ui", "/swagger-ui.html").hasRole("USER")
             .anyRequest().authenticated()
     }
 }
